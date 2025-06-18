@@ -11,7 +11,7 @@ handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET", "dummy"))
 
 @app.route("/callback", methods=['POST'])
 def callback():
-	print("📩 收到 LINE webhook 進來了")
+    print("📩 收到 LINE webhook 進來了")
     signature = request.headers.get('X-Line-Signature', '')
     body = request.get_data(as_text=True)
 
