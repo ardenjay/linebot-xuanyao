@@ -23,6 +23,8 @@ def callback():
     except InvalidSignatureError:
         print("❌ 驗證失敗（這是預期的，因為我們還沒設定憑證）")
         abort(400)
+    except Exception as e:
+        print("❌ 其他 webhook 錯誤：", e)
 
     return 'OK'
 
