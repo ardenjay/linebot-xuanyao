@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: xuanyao-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: LINE_CHANNEL_SECRET
+        fromEnvVar: LINE_CHANNEL_SECRET
+      - key: LINE_CHANNEL_ACCESS_TOKEN
+        fromEnvVar: LINE_CHANNEL_ACCESS_TOKEN
